@@ -18,28 +18,24 @@ Atualmente estou construindo projetos práticos para fortalecer minha experiênc
 
 ---
 
-## 🧠 Foco atual
-
-Atualmente estou focado em evoluir como desenvolvedor backend trabalhando em projetos que envolvem:
+## 🧠 Atualmente estudando e praticando
 
 - desenvolvimento de **APIs REST com Node.js**
 - implementação de **CRUDs completos**
 - construção de **regras de negócio**
 - organização de **arquitetura backend**
 - integração com **bancos de dados**
-- evolução constante através de **projetos práticos**
+- evolução contínua através de **projetos práticos**
 
 ---
 
 ## 📌 Projetos em destaque
 
-Alguns dos projetos que desenvolvi para praticar backend e arquitetura de aplicações:
-
 ### 🔗 URL Shortener API
 Serviço backend para geração de links encurtados e redirecionamento de URLs.
 
 ### 📋 Node To-Do API
-API REST para gerenciamento de tarefas utilizando Node.js e Express.
+API REST para gerenciamento de tarefas utilizando **Node.js** e **Express**.
 
 ### 💰 Refund Request System
 Sistema de gerenciamento de solicitações de reembolso com foco em lógica de negócio.
@@ -52,14 +48,27 @@ Sistema de agendamento para pet shop em desenvolvimento com arquitetura modular.
 
 ---
 
-## 📈 Estatísticas do GitHub
+## 📊 Estatísticas do GitHub
 
 ![Daniel GitHub stats](https://github-readme-stats.vercel.app/api?username=DanAntunesDev&show_icons=true&theme=tokyonight)
 
 ---
 
+## 🔥 Sequência de commits
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=DanAntunesDev&theme=tokyonight)
+
+---
+
+## 📈 Linguagens mais utilizadas
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DanAntunesDev&layout=compact&theme=tokyonight)
+
+---
+
 ## 📫 Contato
 
-- 📧 Email: **djantunes93@gmail.com**
-- 💼 LinkedIn:  
-  https://www.linkedin.com/in/daniel-antunes-a62097384/
+📧 Email: **djantunes93@gmail.com**
+
+💼 LinkedIn:  
+https://www.linkedin.com/in/daniel-antunes-a62097384/
