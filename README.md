@@ -1,16 +1,49 @@
-## Hi there 👋
+# Olá, eu sou o Daniel Antunes.
 
-<!--
-**DanAntunesDev/DanAntunesDev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+💻 Desenvolvedor Backend focado em **Node.js e JavaScript**
 
-Here are some ideas to get you started:
+Tenho experiência construindo APIs REST, autenticação, integração com bancos de dados e organização de arquitetura backend.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🚀 Stack principal
+
+- Node.js
+- JavaScript
+- Express
+- REST APIs
+- PostgreSQL
+- MySQL
+- JWT Authentication
+- Docker
+- Git / GitHub
+
+---
+
+## 🧠 O que eu construo
+
+✔ APIs REST escaláveis  
+✔ Sistemas de autenticação  
+✔ CRUDs completos com banco de dados  
+✔ Integrações com serviços externos  
+✔ Estrutura backend organizada  
+
+---
+
+## 📌 Projetos em destaque
+
+🔹 API ToDo List  
+Backend para gerenciamento de tarefas com Node.js
+
+🔹 Hair Day Scheduler  
+Sistema backend para agendamento
+
+🔹 MundoPet Scheduler  
+API para controle de agendamentos
+
+---
+
+## 📫 Contato
+
+📧 Email: djantunes93@gmail.com  
+💼 LinkedIn: https://www.linkedin.com/in/daniel-antunes-a62097384/
