@@ -18,7 +18,7 @@ Atualmente estou construindo projetos práticos para fortalecer minha experiênc
 
 ---
 
-## 🧠 Atualmente estudando e praticando
+## 🧠 Foco atual
 
 - desenvolvimento de **APIs REST com Node.js**
 - implementação de **CRUDs completos**
@@ -26,6 +26,19 @@ Atualmente estou construindo projetos práticos para fortalecer minha experiênc
 - organização de **arquitetura backend**
 - integração com **bancos de dados**
 - evolução contínua através de **projetos práticos**
+
+---
+
+## 🏗 Princípios de backend que aplico nos projetos
+
+Nos projetos que desenvolvo busco aplicar alguns princípios importantes de arquitetura backend:
+
+- separação de responsabilidades
+- organização em **routes, controllers e services**
+- estrutura modular de código
+- centralização de regras de negócio
+- preparação da aplicação para integração com banco de dados
+- construção de APIs seguindo padrões REST
 
 ---
 
