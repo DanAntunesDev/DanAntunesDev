@@ -1,8 +1,8 @@
-# Olá, eu sou o Daniel Antunes.
+# Olá, eu sou Daniel Antunes.
 
-💻 Desenvolvedor Backend focado em **Node.js e JavaScript**
+💻 Desenvolvedor Backend focado em **Node.js** e **JavaScript**.
 
-Tenho experiência construindo APIs REST, autenticação, integração com bancos de dados e organização de arquitetura backend.
+Estou construindo projetos para fortalecer minha atuação com **APIs REST**, **autenticação**, **regras de negócio**, **banco de dados** e **arquitetura backend**.
 
 ---
 
@@ -16,34 +16,34 @@ Tenho experiência construindo APIs REST, autenticação, integração com banco
 - MySQL
 - JWT Authentication
 - Docker
-- Git / GitHub
+- Git e GitHub
 
 ---
 
-## 🧠 O que eu construo
+## 🧠 Foco atual
 
-✔ APIs REST escaláveis  
-✔ Sistemas de autenticação  
-✔ CRUDs completos com banco de dados  
-✔ Integrações com serviços externos  
-✔ Estrutura backend organizada  
+- Construção de APIs backend
+- Sistemas de agendamento
+- CRUDs completos com regras de negócio
+- Integração com banco de dados
+- Organização de arquitetura backend
+- Evolução diária com novos projetos práticos
 
 ---
 
 ## 📌 Projetos em destaque
 
-🔹 API ToDo List  
-Backend para gerenciamento de tarefas com Node.js
+Em breve vou destacar aqui meus principais projetos backend, com foco em:
 
-🔹 Hair Day Scheduler  
-Sistema backend para agendamento
-
-🔹 MundoPet Scheduler  
-API para controle de agendamentos
+- APIs REST com Node.js
+- Sistemas de agendamento
+- Encurtador de URL
+- Autenticação
+- Estruturação de serviços backend
 
 ---
 
 ## 📫 Contato
 
-📧 Email: djantunes93@gmail.com  
-💼 LinkedIn: https://www.linkedin.com/in/daniel-antunes-a62097384/
+- Email: **djantunes93@gmail.com**
+- LinkedIn: **https://www.linkedin.com/in/daniel-antunes-a62097384/**
