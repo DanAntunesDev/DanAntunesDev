@@ -12,7 +12,7 @@ from profile_config import USERNAME
 ROOT = Path(__file__).resolve().parent.parent
 AVATAR = ROOT / "assets" / "avatar.png"
 OUTPUT = ROOT / "data" / "portrait.txt"
-COLS = 58
+COLS = 96
 HEAD_AND_SHOULDERS = 0.42
 RAMP = " .`:-=+*cs#%@"
 

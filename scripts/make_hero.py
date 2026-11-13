@@ -8,7 +8,7 @@ SOURCE = ROOT / "data" / "portrait.txt"
 OUTPUT = ROOT / "hero.svg"
 HEIGHT = 400
 RAMP = " .`:-=+*cs#%@"
-AREA = (500, 36, 830, 368)
+AREA = (440, 40, 836, 372)
 
 
 def for_paper(line):
