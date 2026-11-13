@@ -2,7 +2,7 @@ import json
 from collections import OrderedDict
 from pathlib import Path
 
-from design import PURPLE, INK, LINE, MONO, MUTED, SANS, SERIF, card, label, svg_open
+from design import PURPLE, INK, STATIC, shimmer, LINE, MONO, MUTED, SANS, SERIF, card, label, svg_open
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "contributions.json"
@@ -84,6 +84,13 @@ def main():
             f'<text x="600" y="{y + 20}" font-family="{SANS}" font-size="12.5" '
             f'fill="{MUTED}">{caption}</text>'
         )
+    if not STATIC:
+        parts.append(
+            f'<circle cx="822" cy="47" r="4" fill="{PURPLE}"><animate attributeName="r" '
+            'values="4;7;4" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" '
+            'values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>'
+        )
+    parts.append(shimmer("stats", 0, 0, 860, HEIGHT, 4.2))
     parts.append("</svg>")
     OUTPUT.write_text("\n".join(parts) + "\n")
     print(f"wrote {OUTPUT.name}")

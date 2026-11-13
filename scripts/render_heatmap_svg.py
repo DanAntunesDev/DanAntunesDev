@@ -2,7 +2,7 @@ import json
 from datetime import date
 from pathlib import Path
 
-from design import HEAT, PURPLE, INK, MONO, MUTED, SERIF, card, label, svg_open
+from design import HEAT, PURPLE, STATIC, shimmer, INK, MONO, MUTED, SERIF, card, label, svg_open
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "contributions.json"
@@ -26,6 +26,16 @@ def weeks_of(days):
     if current:
         weeks.append(current)
     return weeks
+
+
+def wave(column, row):
+    if STATIC:
+        return ""
+    begin = 4.0 + (column + row) * 0.035
+    return (
+        '<animate attributeName="fill-opacity" values="1;0.25;1;1" keyTimes="0;0.03;0.07;1" '
+        f'dur="9s" begin="{begin:.3f}s" repeatCount="indefinite"/>'
+    )
 
 
 def level_of(day):
@@ -65,7 +75,8 @@ def main():
             parts.append(
                 f'<rect class="c" style="animation-delay:{delay:.3f}s" x="{x:.1f}" '
                 f'y="{TOP + weekday * STEP:.1f}" width="{CELL}" height="{CELL}" rx="2.5" '
-                f'fill="{HEAT[level_of(day)]}"><title>{day["date"]}: {day["count"]}</title></rect>'
+                f'fill="{HEAT[level_of(day)]}">{wave(index, weekday)}'
+                f'<title>{day["date"]}: {day["count"]}</title></rect>'
             )
 
     legend_y = TOP + 7 * STEP + 42
@@ -83,6 +94,7 @@ def main():
         f'<text x="{legend_x + len(HEAT) * 14 + 4}" y="{legend_y}" font-family="{MONO}" '
         f'font-size="10.5" fill="{MUTED}">mais</text>'
     )
+    parts.append(shimmer("heat", 0, 0, 860, HEIGHT, 3.6))
     parts.append("</svg>")
     OUTPUT.write_text("\n".join(parts) + "\n")
     print(f"wrote {OUTPUT.name} ({len(weeks)} weeks)")

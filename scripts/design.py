@@ -67,3 +67,32 @@ def label(x, y, text, fill=MUTED, size=11, anchor="start", extra=""):
         f'<text x="{x}" y="{y}" font-family="{MONO}" font-size="{size}" letter-spacing="1.8" '
         f'fill="{fill}" text-anchor="{anchor}" {extra}>{text}</text>'
     )
+
+
+def shimmer(key, x, y, width, height, begin, period=7.0, color="#FFFFFF", strength=0.55):
+    if STATIC:
+        return ""
+    band = width * 0.45
+    sweep = 1.1 / period
+    return (
+        f'<defs><clipPath id="clip-{key}"><rect x="{x}" y="{y}" width="{width}" height="{height}" rx="18"/>'
+        f'</clipPath><linearGradient id="glow-{key}" x1="0" x2="1" y1="0" y2="0">'
+        f'<stop offset="0" stop-color="{color}" stop-opacity="0"/>'
+        f'<stop offset=".5" stop-color="{color}" stop-opacity="{strength}"/>'
+        f'<stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient></defs>'
+        f'<g clip-path="url(#clip-{key})"><rect y="{y}" width="{band:.0f}" height="{height}" '
+        f'fill="url(#glow-{key})" transform="skewX(-18)">'
+        f'<animate attributeName="x" values="{x - band * 1.6:.0f};{x + width + band:.0f};{x + width + band:.0f}" '
+        f'keyTimes="0;{sweep:.3f};1" dur="{period}s" begin="{begin}s" repeatCount="indefinite"/>'
+        "</rect></g>"
+    )
+
+
+def blink(x, y, width, height, fill, begin=1.2):
+    if STATIC:
+        return ""
+    return (
+        f'<rect x="{x}" y="{y}" width="{width}" height="{height}" fill="{fill}" opacity="0">'
+        f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.1s" '
+        f'begin="{begin}s" repeatCount="indefinite"/></rect>'
+    )

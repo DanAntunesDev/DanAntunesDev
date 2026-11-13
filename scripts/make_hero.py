@@ -1,7 +1,21 @@
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from design import STATIC, BLUE, INK, MONO, MUTED, SANS, SERIF, card, label, svg_open
+from design import (
+    BLUE,
+    INK,
+    MONO,
+    MUTED,
+    PURPLE,
+    SANS,
+    SERIF,
+    STATIC,
+    blink,
+    card,
+    label,
+    shimmer,
+    svg_open,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "portrait.txt"
@@ -85,7 +99,16 @@ def main():
         f'<text class="fade" style="animation-delay:1s" x="46" y="374" font-family="{MONO}" '
         f'font-size="12.5" fill="{INK}">@_whoami.dev <tspan fill="{BLUE}">↗</tspan></text>'
     )
+    parts.append(blink(157, 364, 7, 13, PURPLE))
     parts.extend(portrait())
+    if not STATIC:
+        left, top, right, bottom = AREA
+        parts.append(
+            f'<rect x="{left}" y="{top}" width="{right - left}" height="18" fill="{PURPLE}" '
+            f'fill-opacity=".10"><animate attributeName="y" values="{top};{bottom - 18};{bottom - 18}" '
+            f'keyTimes="0;.35;1" dur="6s" begin="3.5s" repeatCount="indefinite"/></rect>'
+        )
+    parts.append(shimmer("hero", 0, 0, 860, HEIGHT, 3.0))
     parts.append("</svg>")
     OUTPUT.write_text("\n".join(parts) + "\n")
     print(f"wrote {OUTPUT.name}")

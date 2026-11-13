@@ -1,6 +1,21 @@
 from pathlib import Path
 
-from design import BLUE, INK, MONO, MUTED, RED, SANS, SERIF, YELLOW, card, label, svg_open
+from design import (
+    BLUE,
+    INK,
+    MONO,
+    MUTED,
+    PURPLE,
+    RED,
+    SANS,
+    SERIF,
+    STATIC,
+    YELLOW,
+    card,
+    label,
+    shimmer,
+    svg_open,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -27,7 +42,14 @@ def highlights():
         parts.append(label(x + 24, 40, tag, fill=ink))
         parts.append(
             f'<text x="{x + width - 24}" y="41" text-anchor="end" font-family="{SANS}" '
-            f'font-size="15" fill="{ink}">↗</text>'
+            f'font-size="15" fill="{ink}">↗'
+            + (
+                ""
+                if STATIC
+                else '<animateTransform attributeName="transform" type="translate" '
+                'values="0 0;3 -3;0 0" dur="1.8s" repeatCount="indefinite"/>'
+            )
+            + "</text>"
         )
         parts.append(
             f'<text x="{x + 22}" y="112" font-family="{SERIF}" font-style="italic" '
@@ -38,6 +60,7 @@ def highlights():
                 f'<text x="{x + 24}" y="{152 + line_index * 20}" font-family="{SANS}" '
                 f'font-size="13" fill="{ink}" fill-opacity=".92">{line}</text>'
             )
+        parts.append(shimmer(f"h{index}", x, 0, width, height, 4.8 + index * 0.35, strength=0.35))
         parts.append("</g>")
     parts.append("</svg>")
     (ROOT / "highlights.svg").write_text("\n".join(parts) + "\n")
@@ -54,7 +77,15 @@ def projects():
         x = index * (width + gap)
         parts.append(f'<g class="fade" style="animation-delay:{0.2 + index * 0.15:.2f}s">')
         parts.append(card(x, top, width, height - top, "#FFFFFF"))
-        parts.append(f'<rect x="{x + 24}" y="{top + 32}" width="8" height="8" rx="1" fill="{color}"/>')
+        pulse = (
+            ""
+            if STATIC
+            else f'<animate attributeName="opacity" values="1;.3;1" dur="1.6s" '
+            f'begin="{index * 0.4:.1f}s" repeatCount="indefinite"/>'
+        )
+        parts.append(
+            f'<rect x="{x + 24}" y="{top + 32}" width="8" height="8" rx="1" fill="{color}">{pulse}</rect>'
+        )
         parts.append(
             f'<text x="{x + 40}" y="{top + 41}" font-family="{SANS}" font-size="17" '
             f'font-weight="600" fill="{INK}">{name}</text>'
@@ -67,6 +98,9 @@ def projects():
         parts.append(
             f'<text x="{x + 24}" y="{height - 26}" font-family="{MONO}" font-size="11" '
             f'fill="{MUTED}">{stack}</text>'
+        )
+        parts.append(
+            shimmer(f"p{index}", x, top, width, height - top, 6.0 + index * 0.35, color=PURPLE, strength=0.12)
         )
         parts.append("</g>")
     parts.append("</svg>")
