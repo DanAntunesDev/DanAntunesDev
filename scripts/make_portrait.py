@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 AVATAR = ROOT / "assets" / "avatar.png"
 OUTPUT = ROOT / "data" / "portrait.txt"
 COLS = 58
-HEAD_AND_SHOULDERS = 0.56
+HEAD_AND_SHOULDERS = 0.42
 RAMP = " .`:-=+*cs#%@"
 
 
