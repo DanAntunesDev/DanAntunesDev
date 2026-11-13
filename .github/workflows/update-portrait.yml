@@ -1,0 +1,37 @@
+name: Update portrait
+
+"on":
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - scripts/make_ascii_svg.py
+      - scripts/svg_frame.py
+      - scripts/requirements-portrait.txt
+      - .github/workflows/update-portrait.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
+jobs:
+  portrait:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt -r scripts/requirements-portrait.txt
+      - run: python scripts/make_ascii_svg.py
+        env:
+          REFRESH_AVATAR: "1"
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: regenerate ascii portrait [skip ci]"
+          file_pattern: "assets/avatar.png portrait-ascii.svg"
