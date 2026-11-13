@@ -3,6 +3,7 @@ name: Update contribution cards
 "on":
   schedule:
     - cron: "17 9 * * *"
+    - cron: "17 21 * * *"
   workflow_dispatch: {}
   push:
     branches: [main]
