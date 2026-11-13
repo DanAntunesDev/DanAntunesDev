@@ -1,87 +1,39 @@
-# Olá, eu sou Daniel Antunes 👋
+<div align="center">
 
-💻 Desenvolvedor **Backend** focado em **Node.js** e **JavaScript**.
+<h3><code>daniel@github ~ $ ./contribuicoes.sh</code></h3>
+<img src="./contrib-heatmap.svg" width="860" alt="Gráfico de contribuições do último ano" />
 
-Atualmente estou construindo projetos práticos para fortalecer minha experiência com **APIs REST**, **arquitetura backend**, **regras de negócio**, **autenticação** e **integração com banco de dados**.
+<br><br>
 
----
+<h3><code>daniel@github ~ $ whoami</code></h3>
+<table>
+  <tr>
+    <td valign="top"><img src="./portrait-ascii.svg" width="370" alt="Retrato em ASCII" /></td>
+    <td valign="top"><img src="./info-card.svg" width="490" alt="Daniel Antunes, desenvolvedor fullstack" /></td>
+  </tr>
+</table>
 
-## 🚀 Stack principal
+<br>
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00758f?style=for-the-badge&logo=mysql&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+<h3><code>daniel@github ~ $ ls ~/projetos</code></h3>
 
----
+</div>
 
-## 🧠 Foco atual
+| Projeto | O que é | Stack |
+| --- | --- | --- |
+| **Chegaí** | SaaS multi-tenant de agendamento e gestão para barbearias, com WhatsApp oficial e white label | NestJS, Prisma, PostgreSQL, Next.js |
+| **PetShop Scheduler** | Agendamento para pet shop com arquitetura modular | Node.js |
+| **Refund Request System** | Solicitações de reembolso com foco em regras de negócio | Node.js |
+| **URL Shortener API** | Encurtador de links com redirecionamento | Node.js, Express |
+| **Node To-Do API** | API REST de tarefas | Node.js, Express |
 
-- desenvolvimento de **APIs REST com Node.js**
-- implementação de **CRUDs completos**
-- construção de **regras de negócio**
-- organização de **arquitetura backend**
-- integração com **bancos de dados**
-- evolução contínua através de **projetos práticos**
+<div align="center">
 
----
+<br>
 
-## 🏗 Princípios de backend que aplico nos projetos
+<h3><code>daniel@github ~ $ contato</code></h3>
 
-Nos projetos que desenvolvo busco aplicar alguns princípios importantes de arquitetura backend:
+<a href="https://www.linkedin.com/in/daniel-antunes-a62097384/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="mailto:djantunes93@gmail.com"><img src="https://img.shields.io/badge/Email-F0384C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
-- separação de responsabilidades
-- organização em **routes, controllers e services**
-- estrutura modular de código
-- centralização de regras de negócio
-- preparação da aplicação para integração com banco de dados
-- construção de APIs seguindo padrões REST
-
----
-
-## 📌 Projetos em destaque
-
-### 🔗 URL Shortener API
-Serviço backend para geração de links encurtados e redirecionamento de URLs.
-
-### 📋 Node To-Do API
-API REST para gerenciamento de tarefas utilizando **Node.js** e **Express**.
-
-### 💰 Refund Request System
-Sistema de gerenciamento de solicitações de reembolso com foco em lógica de negócio.
-
-### 🏛 Balcão Virtual (Projeto descontinuado)
-Plataforma de atendimento e agendamento para cartórios utilizando **Django**, **JWT**, **Celery** e **Docker**.
-
-### 🐾 PetShop Scheduler
-Sistema de agendamento para pet shop em desenvolvimento com arquitetura modular.
-
----
-
-## 📊 Estatísticas do GitHub
-
-![Daniel GitHub stats](https://github-readme-stats.vercel.app/api?username=DanAntunesDev&show_icons=true&theme=tokyonight)
-
----
-
-## 🔥 Sequência de commits
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=DanAntunesDev&theme=tokyonight)
-
----
-
-## 📈 Linguagens mais utilizadas
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DanAntunesDev&layout=compact&theme=tokyonight)
-
----
-
-## 📫 Contato
-
-📧 Email: **djantunes93@gmail.com**
-
-💼 LinkedIn:  
-https://www.linkedin.com/in/daniel-antunes-a62097384/
+</div>
