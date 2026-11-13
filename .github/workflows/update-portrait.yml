@@ -5,8 +5,9 @@ name: Update portrait
   push:
     branches: [main]
     paths:
-      - scripts/make_ascii_svg.py
-      - scripts/svg_frame.py
+      - scripts/make_portrait.py
+      - scripts/make_hero.py
+      - scripts/design.py
       - scripts/requirements-portrait.txt
       - .github/workflows/update-portrait.yml
 
@@ -28,10 +29,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt -r scripts/requirements-portrait.txt
-      - run: python scripts/make_ascii_svg.py
+      - run: python scripts/make_portrait.py
         env:
           REFRESH_AVATAR: "1"
+      - run: python scripts/make_hero.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: regenerate ascii portrait [skip ci]"
-          file_pattern: "assets/avatar.png portrait-ascii.svg"
+          commit_message: "chore: regenerate portrait [skip ci]"
+          file_pattern: "assets/avatar.png data/portrait.txt hero.svg"
