@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="380" viewBox="0 0 490 380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace">
+<style>.l{opacity:0;animation:in .5s ease-out forwards}@keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}.k{fill:#f0384c;font-weight:700}.v{fill:#c9d1d9}</style>
+<rect x="0.5" y="0.5" width="489" height="379" rx="10" fill="#0d1117" stroke="#30363d"/>
+<path d="M0.5 30.5H489.5" stroke="#30363d"/>
+<circle cx="18" cy="15.5" r="5" fill="#f0384c"/>
+<circle cx="34" cy="15.5" r="5" fill="#d29922"/>
+<circle cx="50" cy="15.5" r="5" fill="#4d7cff"/>
+<text x="245.0" y="20" text-anchor="middle" fill="#8b949e" font-size="11">~/neofetch</text>
+<text class="l" style="animation-delay:0.60s" x="22" y="62" font-size="12.5" xml:space="preserve"><tspan fill="#4d7cff" font-weight="700">daniel</tspan><tspan fill="#c9d1d9">@</tspan><tspan fill="#4d7cff" font-weight="700">github</tspan></text>
+<text class="l" style="animation-delay:0.78s" x="22" y="84" font-size="12.5" xml:space="preserve"><tspan fill="#30363d">─────────────</tspan></text>
+<text class="l" style="animation-delay:0.96s" x="22" y="110" font-size="12.5" xml:space="preserve"><tspan class="k">Nome     </tspan><tspan class="v">  Daniel Antunes</tspan></text>
+<text class="l" style="animation-delay:1.14s" x="22" y="136" font-size="12.5" xml:space="preserve"><tspan class="k">Função   </tspan><tspan class="v">  Desenvolvedor Fullstack</tspan></text>
+<text class="l" style="animation-delay:1.32s" x="22" y="162" font-size="12.5" xml:space="preserve"><tspan class="k">Base     </tspan><tspan class="v">  Montes Claros, MG</tspan></text>
+<text class="l" style="animation-delay:1.50s" x="22" y="188" font-size="12.5" xml:space="preserve"><tspan class="k">Agora    </tspan><tspan class="v">  Chegaí: SaaS de agendamento para barbearias</tspan></text>
+<text class="l" style="animation-delay:1.68s" x="22" y="214" font-size="12.5" xml:space="preserve"><tspan class="k">Backend  </tspan><tspan class="v">  NestJS · Node.js · Prisma · PostgreSQL</tspan></text>
+<text class="l" style="animation-delay:1.86s" x="22" y="240" font-size="12.5" xml:space="preserve"><tspan class="k">Frontend </tspan><tspan class="v">  Next.js · React · Tailwind · shadcn/ui</tspan></text>
+<text class="l" style="animation-delay:2.04s" x="22" y="266" font-size="12.5" xml:space="preserve"><tspan class="k">Automação</tspan><tspan class="v">  n8n · agentes de IA · WhatsApp Cloud API</tspan></text>
+<text class="l" style="animation-delay:2.22s" x="22" y="292" font-size="12.5" xml:space="preserve"><tspan class="k">Infra    </tspan><tspan class="v">  Docker · GitHub Actions · Redis</tspan></text>
+<text class="l" style="animation-delay:2.40s" x="22" y="318" font-size="12.5" xml:space="preserve"><tspan class="k">Foco     </tspan><tspan class="v">  APIs multi-tenant, segurança e regras de negócio</tspan></text>
+<rect class="l" style="animation-delay:2.58s" x="22" y="348" width="22" height="12" rx="2" fill="#161b22"/>
+<rect class="l" style="animation-delay:2.64s" x="48" y="348" width="22" height="12" rx="2" fill="#0f2a5c"/>
+<rect class="l" style="animation-delay:2.70s" x="74" y="348" width="22" height="12" rx="2" fill="#1e4fd8"/>
+<rect class="l" style="animation-delay:2.76s" x="100" y="348" width="22" height="12" rx="2" fill="#4d7cff"/>
+<rect class="l" style="animation-delay:2.82s" x="126" y="348" width="22" height="12" rx="2" fill="#8fb0ff"/>
+<rect class="l" style="animation-delay:2.88s" x="152" y="348" width="22" height="12" rx="2" fill="#f0384c"/>
+</svg>
