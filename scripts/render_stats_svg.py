@@ -2,7 +2,7 @@ import json
 from collections import OrderedDict
 from pathlib import Path
 
-from design import BLUE, INK, LINE, MONO, MUTED, SANS, SERIF, card, label, svg_open
+from design import PURPLE, INK, LINE, MONO, MUTED, SANS, SERIF, card, label, svg_open
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "contributions.json"
@@ -45,7 +45,7 @@ def main():
         height = max(3, value / peak * area)
         x = left + index * (width + gap)
         is_peak = value == peak and value > 0
-        color = BLUE if is_peak else (INK if value else "#CFCCC2")
+        color = PURPLE if is_peak else (INK if value else "#CFCCC2")
         parts.append(
             f'<rect class="b" style="animation-delay:{0.2 + index * 0.06:.2f}s" x="{x:.1f}" '
             f'y="{base - height:.1f}" width="{width:.1f}" height="{height:.1f}" rx="2" fill="{color}"/>'
@@ -54,7 +54,7 @@ def main():
             parts.append(
                 f'<text class="fade" style="animation-delay:1s" x="{x + width / 2:.1f}" '
                 f'y="{base - height - 8:.1f}" text-anchor="middle" font-family="{MONO}" '
-                f'font-size="11" fill="{BLUE}">{number(value)}</text>'
+                f'font-size="11" fill="{PURPLE}">{number(value)}</text>'
             )
         parts.append(
             f'<text x="{x + width / 2:.1f}" y="{base + 20}" text-anchor="middle" '

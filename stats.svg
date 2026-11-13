@@ -23,8 +23,8 @@
 <text x="410.2" y="306" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="10.5" fill="#6E6C66">ago</text>
 <rect class="b" style="animation-delay:0.74s" x="436.8" y="283.0" width="35.1" height="3.0" rx="2" fill="#CFCCC2"/>
 <text x="454.3" y="306" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="10.5" fill="#6E6C66">set</text>
-<rect class="b" style="animation-delay:0.80s" x="480.8" y="156.0" width="35.1" height="130.0" rx="2" fill="#2F55F5"/>
-<text class="fade" style="animation-delay:1s" x="498.4" y="148.0" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="11" fill="#2F55F5">136</text>
+<rect class="b" style="animation-delay:0.80s" x="480.8" y="156.0" width="35.1" height="130.0" rx="2" fill="#7C3AED"/>
+<text class="fade" style="animation-delay:1s" x="498.4" y="148.0" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="11" fill="#7C3AED">136</text>
 <text x="498.4" y="306" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="10.5" fill="#6E6C66">out</text>
 <rect class="b" style="animation-delay:0.86s" x="524.9" y="211.4" width="35.1" height="74.6" rx="2" fill="#141414"/>
 <text x="542.5" y="306" text-anchor="middle" font-family="'Mono','JetBrains Mono',ui-monospace,Menlo,monospace" font-size="10.5" fill="#6E6C66">nov</text>

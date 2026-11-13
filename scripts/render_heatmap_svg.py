@@ -2,7 +2,7 @@ import json
 from datetime import date
 from pathlib import Path
 
-from design import BLUE, HEAT, INK, MONO, MUTED, SERIF, card, label, svg_open
+from design import HEAT, PURPLE, INK, MONO, MUTED, SERIF, card, label, svg_open
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "contributions.json"
@@ -46,7 +46,7 @@ def main():
     parts.append(card(0, 0, 860, HEIGHT))
     parts.append(
         f'<text x="40" y="60" font-family="{SERIF}" font-size="36" fill="{INK}">Todo dia, '
-        f'<tspan font-style="italic" fill="{BLUE}">em azul</tspan></text>'
+        f'<tspan font-style="italic" fill="{PURPLE}">em roxo</tspan></text>'
     )
     parts.append(label(820, 56, "ATUALIZADO DIARIAMENTE", anchor="end"))
 

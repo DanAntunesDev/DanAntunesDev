@@ -15,7 +15,8 @@ LINE = "#DDDBD2"
 BLUE = "#2F55F5"
 RED = "#EF3B2D"
 YELLOW = "#FFC21A"
-HEAT = ["#E3E1D9", "#C7D2FF", "#97AAFF", "#6382FF", "#2F55F5", "#1631C9"]
+PURPLE = "#7C3AED"
+HEAT = ["#E3E1D9", "#DDD0FB", "#C0A6F7", "#9F75F0", "#7C3AED", "#5B21B6"]
 
 SERIF = "'Serif','Instrument Serif',Georgia,serif"
 MONO = "'Mono','JetBrains Mono',ui-monospace,Menlo,monospace"
