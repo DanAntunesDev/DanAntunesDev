@@ -1,20 +1,17 @@
 import json
-import os
 from datetime import date
 from pathlib import Path
 
-from profile_config import HEATMAP_LEVELS, PALETTE
+from design import BLUE, HEAT, INK, MONO, MUTED, SERIF, card, label, svg_open
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "contributions.json"
-OUTPUT = ROOT / "contrib-heatmap.svg"
-
+OUTPUT = ROOT / "heatmap.svg"
+HEIGHT = 256
 CELL = 12
-GAP = 3
-STEP = CELL + GAP
-LEFT = 34
-TOP = 44
-STATIC = os.environ.get("STATIC") == "1"
+STEP = 14.6
+LEFT = 42
+TOP = 92
 MONTHS = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
 
 
@@ -31,65 +28,60 @@ def weeks_of(days):
     return weeks
 
 
+def level_of(day):
+    if day["count"] >= 15:
+        return len(HEAT) - 1
+    return min(day["level"], len(HEAT) - 2)
+
+
 def main():
     data = json.loads(SOURCE.read_text())
-    weeks = weeks_of(data["days"])
-    width = LEFT + len(weeks) * STEP + 20
-    height = TOP + 7 * STEP + 58
-    parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">',
-        "<style>"
-        ".c{opacity:%s;transform-box:fill-box;transform-origin:center;"
-        "animation:in .45s cubic-bezier(.2,.8,.2,1) forwards}"
-        "@keyframes in{from{opacity:0;transform:translateY(-6px) scale(.6)}"
-        "to{opacity:1;transform:none}}"
-        ".t{fill:%s;font-size:11px}.h{fill:%s;font-size:13px;font-weight:600}"
-        "</style>" % ("1" if STATIC else "0", PALETTE["muted"], PALETTE["text"]),
-        f'<rect width="{width}" height="{height}" rx="10" fill="{PALETTE["bg"]}" stroke="{PALETTE["border"]}"/>',
-        f'<text class="h" x="{LEFT}" y="24">contribuições no último ano</text>',
-    ]
+    weeks = weeks_of(data["days"])[-53:]
+    css = (
+        ".c{opacity:0;transform-box:fill-box;transform-origin:center;"
+        "animation:pop .5s cubic-bezier(.2,.8,.2,1) forwards}"
+        "@keyframes pop{from{opacity:0;transform:translateY(-8px) scale(.5)}to{opacity:1;transform:none}}"
+    )
+    parts = svg_open(HEIGHT, css, sans=False)
+    parts.append(card(0, 0, 860, HEIGHT))
+    parts.append(
+        f'<text x="40" y="60" font-family="{SERIF}" font-size="36" fill="{INK}">Todo dia, '
+        f'<tspan font-style="italic" fill="{BLUE}">em azul</tspan></text>'
+    )
+    parts.append(label(820, 56, "ATUALIZADO DIARIAMENTE", anchor="end"))
 
     last_month = None
     for index, week in enumerate(weeks):
-        month = int(week[0][1]["date"][5:7])
-        if month != last_month:
-            if index < len(weeks) - 2:
-                parts.append(
-                    f'<text class="t" x="{LEFT + index * STEP}" y="{TOP - 6}">{MONTHS[month - 1]}</text>'
-                )
-            last_month = month
-        for weekday, day in week:
-            delay = (index + weekday) * 0.012
-            color = HEATMAP_LEVELS[min(day["level"], len(HEATMAP_LEVELS) - 1)]
-            if day["count"] >= 15:
-                color = HEATMAP_LEVELS[-1]
+        x = LEFT + index * STEP
+        month = int(week[-1][1]["date"][5:7])
+        if month != last_month and 0 < index < len(weeks) - 1:
             parts.append(
-                f'<rect class="c" style="animation-delay:{delay:.3f}s" x="{LEFT + index * STEP}" '
-                f'y="{TOP + weekday * STEP}" width="{CELL}" height="{CELL}" rx="3" fill="{color}">'
-                f'<title>{day["date"]}: {day["count"]}</title></rect>'
+                f'<text x="{x:.1f}" y="{TOP + 7 * STEP + 18:.1f}" font-family="{MONO}" '
+                f'font-size="10.5" fill="{MUTED}">{MONTHS[month - 1]}</text>'
+            )
+        last_month = month
+        for weekday, day in week:
+            delay = (index * 0.9 + weekday * 2) * 0.012
+            parts.append(
+                f'<rect class="c" style="animation-delay:{delay:.3f}s" x="{x:.1f}" '
+                f'y="{TOP + weekday * STEP:.1f}" width="{CELL}" height="{CELL}" rx="2.5" '
+                f'fill="{HEAT[level_of(day)]}"><title>{day["date"]}: {day["count"]}</title></rect>'
             )
 
-    for weekday, label in ((1, "seg"), (3, "qua"), (5, "sex")):
-        parts.append(f'<text class="t" x="6" y="{TOP + weekday * STEP + 10}">{label}</text>')
-
-    footer_y = TOP + 7 * STEP + 26
-    best = data.get("bestDay") or {"count": 0}
-    stats = (
-        f'{data["total"]} contribuições · sequência atual {data["currentStreak"]} dias · '
-        f'maior sequência {data["longestStreak"]} dias · melhor dia {best["count"]}'
+    legend_y = TOP + 7 * STEP + 42
+    legend_x = 820 - len(HEAT) * 14 - 34
+    parts.append(
+        f'<text x="{legend_x - 8}" y="{legend_y}" font-family="{MONO}" font-size="10.5" '
+        f'fill="{MUTED}" text-anchor="end">menos</text>'
     )
-    parts.append(f'<text class="t" x="{LEFT}" y="{footer_y}">{stats}</text>')
-
-    legend_x = width - 20 - len(HEATMAP_LEVELS) * STEP - 70
-    parts.append(f'<text class="t" x="{legend_x}" y="{footer_y + 20}">menos</text>')
-    for index, color in enumerate(HEATMAP_LEVELS):
+    for index, color in enumerate(HEAT):
         parts.append(
-            f'<rect x="{legend_x + 40 + index * STEP}" y="{footer_y + 10}" width="{CELL}" '
-            f'height="{CELL}" rx="3" fill="{color}"/>'
+            f'<rect x="{legend_x + index * 14}" y="{legend_y - 10}" width="11" height="11" '
+            f'rx="2" fill="{color}"/>'
         )
     parts.append(
-        f'<text class="t" x="{legend_x + 44 + len(HEATMAP_LEVELS) * STEP}" y="{footer_y + 20}">mais</text>'
+        f'<text x="{legend_x + len(HEAT) * 14 + 4}" y="{legend_y}" font-family="{MONO}" '
+        f'font-size="10.5" fill="{MUTED}">mais</text>'
     )
     parts.append("</svg>")
     OUTPUT.write_text("\n".join(parts) + "\n")
