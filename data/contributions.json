@@ -1,6 +1,6 @@
 {
   "username": "DanAntunesDev",
-  "total": 344,
+  "total": 345,
   "currentStreak": 58,
   "longestStreak": 58,
   "bestDay": {
@@ -1857,7 +1857,12 @@
     {
       "date": "2026-11-27",
       "level": 1,
-      "count": 2
+      "count": 3
+    },
+    {
+      "date": "2026-11-28",
+      "level": 0,
+      "count": 0
     }
   ]
 }
